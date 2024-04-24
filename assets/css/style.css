@@ -45,16 +45,19 @@
 /* tab */
 .tab{
     flex-direction: column;
-    background-color: #f0f0f0;
-    height: 100%;
     padding: 16px;
     border-radius: 8px;
+}
+
+.left-tab{
+    background-color: #f0f0f0;
+    height: 100%;
 }
 
 .tablinks{
     padding:10px;
     font-weight: 700;
-    background: whitesmoke;
+    background: #ffffff;
     border: 1px solid #e7e7e7;
 }
 
@@ -70,6 +73,9 @@
     color: #fff;
 }
 
+.tab-dropdown{
+    display: none;
+}
 
 .tab-dropdown .dropdown {
     width: 100%;
@@ -78,7 +84,6 @@
     border-radius: 5px;
     padding: 10px 15px;
     font-size: 16px;
-    margin-bottom: 16px;
 }
 
 .tab-dropdown .label {
@@ -87,3 +92,13 @@
     font-weight: 700;
 }
 /* tab */
+
+@media screen and (max-width: 768px) {
+    .tab{
+        display: none;
+    }
+    .tab-dropdown{
+        display: block;
+        padding: 16px;
+    }
+}

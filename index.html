@@ -192,25 +192,24 @@
                                 <div class="tab-dropdown">
                                     <form>
                                         <div class="label">Browse categories</div>
-                                        <select name="" id="" class="dropdown">
-                                            <option value="#tech">Technology</option>
-                                            <option value="#tech">Technology</option>
-                                            <option value="#tech">Technology</option>
-                                            <option value="#tech">Technology</option>
+                                        <select id="tabSelector" class="dropdown">
+                                            <option value="tab1">Technology</option>
+                                            <option value="tab2">Technology</option>
+                                            <option value="tab3">Technology</option>
                                         </select>
                                     </form>
                                 </div>
                                 <div class="tab d-flex">
-                                    <button class="tablinks active" onclick="openCity(event, 'London')" id="defaultOpen">London</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                                    <button class="tablinks active" class="tablinks" data-tab="tab1">Technology</button>
+                                    <button class="tablinks" class="tablinks" data-tab="tab2">Internet</button>
+                                    <button class="tablinks" class="tablinks" data-tab="tab3">Computers</button>
                                 </div>
                             </div>
                            
                         </div>
                         <div class="col-lg-8">
                             <div class="tab-content">
-                                <div id="London" class="tabcontent">
+                                <div id="tab1" class="tabcontent">
                                     <div class="row row-gap">
                                         <div class="col-lg-4">
                                             <div class="site-card grid-md-30">
@@ -224,7 +223,7 @@
                                                             sizes="(max-width: 800px) 100vw, 800px"></a></div>
                                                 <div class="site-content"> <a
                                                         href="https://digitalplanners.net/social-bookmarking-sites/"
-                                                        class="site-title" aria-label="post-url">200+ Social Bookmarking
+                                                        class="site-title" aria-label="post-url">1200+ Social Bookmarking
                                                         Sites List
                                                         in 2024 – All Working Sites Covered!!</a>
                                                     <div class="author"><a class="auth-name"
@@ -341,7 +340,7 @@
                                     </div>
                                 </div>
 
-                                <div id="Paris" class="tabcontent">
+                                <div id="tab2" class="tabcontent">
                                     <div class="row row-gap">
                                         <div class="col-lg-4">
                                             <div class="site-card grid-md-30">
@@ -355,7 +354,7 @@
                                                             sizes="(max-width: 800px) 100vw, 800px"></a></div>
                                                 <div class="site-content"> <a
                                                         href="https://digitalplanners.net/social-bookmarking-sites/"
-                                                        class="site-title" aria-label="post-url">200+ Social Bookmarking
+                                                        class="site-title" aria-label="post-url">Second Social Bookmarking
                                                         Sites List
                                                         in 2024 – All Working Sites Covered!!</a>
                                                     <div class="author"><a class="auth-name"
@@ -451,7 +450,7 @@
                                     </div>
                                 </div>
 
-                                <div id="Tokyo" class="tabcontent">
+                                <div id="tab3" class="tabcontent">
                                     <div class="row row-gap">
                                         <div class="col-lg-4">
                                             <div class="site-card grid-md-30">
@@ -465,7 +464,7 @@
                                                             sizes="(max-width: 800px) 100vw, 800px"></a></div>
                                                 <div class="site-content"> <a
                                                         href="https://digitalplanners.net/social-bookmarking-sites/"
-                                                        class="site-title" aria-label="post-url">200+ Social Bookmarking
+                                                        class="site-title" aria-label="post-url">Third Social Bookmarking
                                                         Sites List
                                                         in 2024 – All Working Sites Covered!!</a>
                                                     <div class="author"><a class="auth-name"
@@ -986,25 +985,44 @@
     <script
         src="https://digitalplanners.net/wp-content/themes/digitalplanner.com_/min/frontend/js/minified/scripts.min.428ce40cdd232dfecee9.js"
         id="digital-planner-js"></script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var tabButtons = document.querySelectorAll(".tablinks");
+        var selectElement = document.getElementById("tabSelector");
 
-    <script>
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function openTab(tabName) {
+            var tabContent = document.getElementById(tabName);
+            var allTabContent = document.querySelectorAll(".tabcontent");
+            var allTabButtons = document.querySelectorAll(".tablinks");
+
+            for (var j = 0; j < allTabContent.length; j++) {
+                allTabContent[j].style.display = "none";
             }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+            for (var k = 0; k < allTabButtons.length; k++) {
+                allTabButtons[k].classList.remove("active");
             }
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
+
+            tabContent.style.display = "block";
+            document.querySelector('.tablinks[data-tab="' + tabName + '"]').classList.add("active");
         }
 
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-    </script>
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].addEventListener("click", function () {
+                var tabName = this.dataset.tab;
+                openTab(tabName);
+            });
+        }
+
+        selectElement.addEventListener("change", function() {
+            var selectedValue = this.value;
+            openTab(selectedValue);
+        });
+
+        openTab('tab1');
+    });
+</script>
 
 
 </body>
