@@ -1,0 +1,89 @@
+.hero-header{
+    padding-block: clamp(1.5625rem, 0.8929rem + 1.7857vw, 2.5rem);
+    background: #002737;
+    color: #fff;
+}
+
+.hero-title{
+    font-family: var(--font-gilory);
+    font-size: clamp(1.875rem, 1.2054rem + 1.7857vw, 2.8125rem);
+}
+
+.tool-card{
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    border: 1px solid #80808030;
+}
+
+.tool-card p{
+    -webkit-line-clamp: 3 !important;
+}
+
+.tool-card .sep-btn{
+   margin-inline: auto;
+}
+.tool-card .site-title {
+    color: #000;
+}
+.tool-card img{
+    margin-bottom: clamp(0.625rem, -0.2679rem + 2.381vw, 1.875rem);
+}
+
+.sep-btn:hover {
+    background: linear-gradient(212deg,#017dab 5%,#13cc62 94%);
+}
+
+/* overwrite code */
+[class*=digiplan-container] {
+    margin-bottom: 40px;
+}
+/* OVERWRITE CODE */
+
+
+/* tab */
+.tab{
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: 100%;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.tablinks{
+    padding:10px;
+    font-weight: 700;
+    background: whitesmoke;
+    border: 1px solid #e7e7e7;
+}
+
+.tab-content{
+    min-height: 400px;
+    padding:25px;
+    box-shadow: 0 0 8px 0 #00000029;
+    border-radius: 8px;
+}
+
+.tablinks.active {
+    background: var(--gradient);
+    color: #fff;
+}
+
+
+.tab-dropdown .dropdown {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.tab-dropdown .label {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+/* tab */
