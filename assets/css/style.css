@@ -46,12 +46,12 @@
 .tab{
     flex-direction: column;
     padding: 16px;
-    border-radius: 8px;
 }
 
 .left-tab{
     background-color: #f0f0f0;
     height: 100%;
+    border-radius: 8px;
 }
 
 .tablinks{
@@ -59,6 +59,7 @@
     font-weight: 700;
     background: #ffffff;
     border: 1px solid #e7e7e7;
+    text-align: start;
 }
 
 .tab-content{
